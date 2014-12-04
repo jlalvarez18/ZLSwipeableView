@@ -23,6 +23,10 @@
 
 - (void)swipeableView: (ZLSwipeableView *)swipeableView didEndSwipingView:(UIView *)view atLocation:(CGPoint)location;
 
+- (BOOL)swipeableView: (ZLSwipeableView *)swipeableView shouldSwipeLeft:(UIView *)view;
+
+- (BOOL)swipeableView: (ZLSwipeableView *)swipeableView shouldSwipeRight:(UIView *)view;
+
 @end
 
 
@@ -73,8 +77,11 @@
 /// Discard all swipeable views on the screen.
 -(void)discardAllSwipeableViews;
 
-/// Load up to 3 swipeable views.
+/// Load up to 3 swipeable views. No animation.
 -(void)loadNextSwipeableViewsIfNeeded;
+
+/// Load up to 3 swipeable views with option of it being animated
+-(void)loadNextSwipeableViewsIfNeeded:(BOOL)animated;
 
 /// Swipe top view to the left programmatically
 -(void)swipeTopViewToLeft;
